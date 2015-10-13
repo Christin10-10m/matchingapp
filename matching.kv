@@ -1,0 +1,85 @@
+#:kivy 1.0.9
+
+<MatchingGame>:  
+
+    Widget:
+        id: game_screen
+        size: root.size
+        
+        BoxLayout:
+            id: game_area
+            orientation: 'vertical'
+            size: root.size
+            
+            canvas:
+                Color:
+                    rgb: (1,1,1)
+                Rectangle:
+                    source: "images/background.png"
+                    size: root.size
+        Label:
+            font_size: 70  
+            center_x: root.width / 2
+            top: root.top - 25
+            text: 'ANIMAL MATCHING'
+
+        GridLayout:
+            size: (1000, 1000)
+            center_x: root.width / 2
+            top: root.top - 125
+            cols:4
+            rows:4
+            spacing:10
+            padding:10
+
+
+            ToggleButton:
+                text: str(root.characters[0])
+                background_down: str(root.grid[root.characters[0]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[1])
+                background_down: str(root.grid[root.characters[1]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[2])
+                background_down: str(root.grid[root.characters[2]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[3])
+                background_down: str(root.grid[root.characters[3]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[4])
+                background_down: str(root.grid[root.characters[4]-1].imageurl)  
+            ToggleButton:
+                text: str(root.characters[5])
+                background_down: str(root.grid[root.characters[5]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[6])
+                background_down: str(root.grid[root.characters[6]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[7])
+                background_down: str(root.grid[root.characters[7]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[8])
+                background_down: str(root.grid[root.characters[8]-1].imageurl)  
+            ToggleButton:
+                text: str(root.characters[9])
+                background_down: str(root.grid[root.characters[9]-1].imageurl)
+            ToggleButton:
+                text: str(root.characters[10])
+                background_down: str(root.grid[root.characters[10]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[11])
+                background_down: str(root.grid[root.characters[11]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[12])
+                background_down: str(root.grid[root.characters[12]-1].imageurl)  
+            ToggleButton:
+                text: str(root.characters[13])
+                background_down: str(root.grid[root.characters[13]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[14])
+                background_down: str(root.grid[root.characters[14]-1].imageurl) 
+            ToggleButton:
+                text: str(root.characters[15])
+                background_down: str(root.grid[root.characters[15]-1].imageurl) 
+
+    

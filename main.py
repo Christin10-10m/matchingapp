@@ -10,7 +10,7 @@ from kivy.uix.togglebutton import ToggleButton
 from kivy.properties import StringProperty, ObjectProperty,NumericProperty,ListProperty
 from kivy.uix.image import Image
 from kivy.uix.button import Button
-from kivy.uix.scatter import Scatter
+from functools import partial
 
 class Tile(ToggleButton):
      # A tile on the game grid will have the folloing attributes:
@@ -61,44 +61,49 @@ cards = [
     babycow
     ]
 
-
 class MatchingGame(Widget):
+    first = "Why does this string work?"
     grid = random.sample(cards, len(cards))
     characters = range (1, len(grid) + 1)
+# Function to pass back info about the clicks
+    def passed_back(self, arg):
+        if self.first:
+            self.first = arg
+        print "first: %s" % self.first
+        print "hooray!!"
+        print "%s" % arg
+
     def play():
         matched = []
         while True:
-            print_grid(grid, matched)
+            # if x in matched:...maybe?
+            #     toggle the tile open and make it unclickable
             if len(matched) == len(grid):
                 print "You have matched all the animals!"
                 break
+        while True:
+            i = "passed_back(self, arg) #this might not work. self.passed_back()"
+            if i not in matched:
+                print "You picked %s" %grid[i-1].name
+                break
+        while True: 
+            k = "passed_back(self, arg)"
+            if k not in matched:
+                print "You picked %s" %grid[k-1].name
+                break
 
-            while True:
-                i = int(raw_input("choose a numbered tile!"))
-                if i not in matched:
-                    print "You picked %s" %grid[i-1].name
-                    break
-                else:
-                    print "This number in unavailable, pick again."
-                        
-            while True: 
-                k = int(raw_input("choose another numbered tile!"))
-                if k == i:
-                    print "Sorry, you cannot guess the same tile twice."
-                if k not in matched:
-                    print "You picked %s" %grid[k-1].name
-                    break
-                else:
-                    print "This number in unavailable, pick again."
+        if k != i and grid[i-1].kind == grid[k-1].kind:
+            matched.append(k)
+            matched.append(i)
+            print "it's a match!"
 
-            if k != i and grid[i-1].kind == grid[k-1].kind:
-                matched.append(k)
-                matched.append(i)
-                print "it's a match!"
-            else:
-                if grid[i-1].kind != grid[k-1].kind:
-                    print "Sorry, these tiles aren't a match"
-
+    # while True:
+    #     play()
+    #     # # interstitial loads with two buttons, "Want to play again? (y/n)"
+    #     # y = "yes button pressed"
+    #     # if y != "y":
+    #     #     break
+    #     pass
 
 class MatchingApp(App):
     def build(self):

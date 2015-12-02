@@ -5,6 +5,7 @@ from kivy.uix.image import Image
 from kivy.graphics import Color
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.togglebutton import ToggleButton
 from kivy.properties import StringProperty, ObjectProperty,NumericProperty,ListProperty
@@ -17,7 +18,7 @@ class Tile(ToggleButton):
 
      #    Attributes:
      #       Kind: Species of the animal depicted in the tile
-     #       name: name of the animal, deontes whether it's an adult or a baby. 
+     #       name: name of the animal, denotes whether it's an adult or a baby. 
      #        url: image url for the tile
 
   def __init__(self,kind, name, imageurl):
@@ -62,52 +63,24 @@ cards = [
     ]
 
 class MatchingGame(Widget):
-    first = "Why does this string work?"
+    first = "first click"
     grid = random.sample(cards, len(cards))
     characters = range (1, len(grid) + 1)
+    matched = []
+    
 # Function to pass back info about the clicks
     def passed_back(self, arg):
         if self.first:
             self.first = arg
         print "first: %s" % self.first
-        print "hooray!!"
-        print "%s" % arg
-
-    def play():
-        matched = []
-        while True:
-            # if x in matched:...maybe?
-            #     toggle the tile open and make it unclickable
-            if len(matched) == len(grid):
-                print "You have matched all the animals!"
-                break
-        while True:
-            i = "passed_back(self, arg) #this might not work. self.passed_back()"
-            if i not in matched:
-                print "You picked %s" %grid[i-1].name
-                break
-        while True: 
-            k = "passed_back(self, arg)"
-            if k not in matched:
-                print "You picked %s" %grid[k-1].name
-                break
-
-        if k != i and grid[i-1].kind == grid[k-1].kind:
-            matched.append(k)
-            matched.append(i)
-            print "it's a match!"
-
-    # while True:
-    #     play()
-    #     # # interstitial loads with two buttons, "Want to play again? (y/n)"
-    #     # y = "yes button pressed"
-    #     # if y != "y":
-    #     #     break
-    #     pass
+        if self.first in self.characters:
+            print "You picked %s" %(self.grid[self.first-1].name)
 
 class MatchingApp(App):
     def build(self):
         return MatchingGame()
+
+    
 
 
 if __name__ == '__main__':

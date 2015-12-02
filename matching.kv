@@ -16,7 +16,8 @@
                     rgb: (1,1,1)
                 Rectangle:
                     source: "images/background.png"
-                    size: root.size
+                    size: self.size
+                    pos: self.pos
         Label:
             font_size: 70  
             center_x: root.width / 2
@@ -38,95 +39,95 @@
                 id: tile1
                 text: str(root.characters[0])
                 background_down: str(root.grid[root.characters[0]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[0]-1].kind)                
+                on_press: root.passed_back(root.characters[0])                
             ToggleButton:
                 id: tile2
                 text: str(root.characters[1])
                 background_down: str(root.grid[root.characters[1]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[1]-1].kind)
+                on_press: root.passed_back(root.characters[1])
 
             ToggleButton:
                 id: tile3
                 text: str(root.characters[2])
                 background_down: str(root.grid[root.characters[2]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[2]-1].kind)
+                on_press: root.passed_back(root.characters[2])
 
             ToggleButton:
                 id: tile4
                 text: str(root.characters[3])
                 background_down: str(root.grid[root.characters[3]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[3]-1].kind)
+                on_press: root.passed_back(root.characters[3])
 
             ToggleButton:
                 id: tile5
                 text: str(root.characters[4])
                 background_down: str(root.grid[root.characters[4]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[4]-1].kind) 
+                on_press: root.passed_back(root.characters[4]) 
 
             ToggleButton:
                 id: tile6
                 text: str(root.characters[5])
                 background_down: str(root.grid[root.characters[5]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[5]-1].kind)
+                on_press: root.passed_back(root.characters[5])
 
             ToggleButton:
                 id: tile7
                 text: str(root.characters[6])
                 background_down: str(root.grid[root.characters[6]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[6]-1].kind)
+                on_press: root.passed_back(root.characters[6])
 
             ToggleButton:
                 id: tile8
                 text: str(root.characters[7])
                 background_down: str(root.grid[root.characters[7]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[7]-1].kind)
+                on_press: root.passed_back(root.characters[7])
 
             ToggleButton:
                 id: tile9
                 text: str(root.characters[8])
                 background_down: str(root.grid[root.characters[8]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[8]-1].kind) 
+                on_press: root.passed_back(root.characters[8]) 
 
             ToggleButton:
                 id: tile10
                 text: str(root.characters[9])
                 background_down: str(root.grid[root.characters[9]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[9]-1].kind)
+                on_press: root.passed_back(root.characters[9])
 
             ToggleButton:
                 id: tile11
                 text: str(root.characters[10])
                 background_down: str(root.grid[root.characters[10]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[10]-1].kind)
+                on_press: root.passed_back(root.characters[10])
 
             ToggleButton:
                 id: tile12
                 text: str(root.characters[11])
                 background_down: str(root.grid[root.characters[11]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[11]-1].kind)
+                on_press: root.passed_back(root.characters[11])
 
             ToggleButton:
                 id: tile13
                 text: str(root.characters[12])
                 background_down: str(root.grid[root.characters[12]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[12]-1].kind) 
+                on_press: root.passed_back(root.characters[12]) 
 
             ToggleButton:
                 id: tile14
                 text: str(root.characters[13])
                 background_down: str(root.grid[root.characters[13]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[13]-1].kind)
+                on_press: root.passed_back(root.characters[13])
 
             ToggleButton:
                 id: tile15
                 text: str(root.characters[14])
                 background_down: str(root.grid[root.characters[14]-1].imageurl) 
-                on_press: root.passed_back(root.grid[root.characters[14]-1].kind)
+                on_press: root.passed_back(root.characters[14])
 
             ToggleButton:
                 id: tile16
                 text: str(root.characters[15])
                 background_down: str(root.grid[root.characters[15]-1].imageurl)
-                on_press: root.passed_back(root.grid[root.characters[15]-1].kind) 
+                on_press: root.passed_back(root.characters[15]) 
 
     

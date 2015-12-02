@@ -63,24 +63,30 @@ cards = [
     ]
 
 class MatchingGame(Widget):
-    first = "first click"
+    first = 0
     grid = random.sample(cards, len(cards))
     characters = range (1, len(grid) + 1)
     matched = []
     
 # Function to pass back info about the clicks
     def passed_back(self, arg):
-        if self.first:
-            self.first = arg
-        print "first: %s" % self.first
-        if self.first in self.characters:
-            print "You picked %s" %(self.grid[self.first-1].name)
+        if MatchingGame.first not in MatchingGame.matched:
+            MatchingGame.first = arg
+            print "first: %s" % MatchingGame.first
+            print "You picked %s" %(MatchingGame.grid[MatchingGame.first-1].name)
+        # ok, now, if they click again and it's the same 'kind' tell that it's a match
+        # if arg == MatchingGame.first: 
+        #     MatchingGame.first == None
+        #     # Then if kind == kind... print, it's a match!
+        #     print MatchingGame.first
+
+
+        # Now, add the two matched tiles to the "self.matched" list, and make them untoggalable. 
+            print MatchingGame.matched
 
 class MatchingApp(App):
     def build(self):
         return MatchingGame()
-
-    
 
 
 if __name__ == '__main__':

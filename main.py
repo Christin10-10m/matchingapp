@@ -14,7 +14,7 @@ from kivy.uix.button import Button
 from functools import partial
 
 class Tile(ToggleButton):
-     # A tile on the game grid will have the folloing attributes:
+     # A tile on the game grid will have the following attributes:
 
      #    Attributes:
      #       Kind: Species of the animal depicted in the tile
@@ -71,31 +71,21 @@ class MatchingGame(Widget):
 # Function to pass back info about the clicks
     def passed_back(self, arg):
         clickedOn = MatchingGame.grid[arg - 1]
-        print "clicked on = %s" % clickedOn.name
+        if clickedOn not in MatchingGame.matched:
+            print "clicked on = %s" % clickedOn.name
         if MatchingGame.selected and MatchingGame.selected[0].kind == clickedOn.kind:   
             print "MATCH!"
+            MatchingGame.matched.append(MatchingGame.selected) # how do you add both? 
             MatchingGame.selected = []
+            print "Matched:" 
+            print MatchingGame.matched # how to get it to print list attributes? 
         elif MatchingGame.selected and MatchingGame.selected[0].kind != clickedOn.kind:
             print "NO MATCH!"
             MatchingGame.selected = []
         else:
             MatchingGame.selected.append(clickedOn) 
-        #if MatchingGame.first not in MatchingGame.matched:
-        #    MatchingGame.first = arg
-        #    print "first: %s" % MatchingGame.first
-        #    print "You picked %s" %(MatchingGame.grid[MatchingGame.first-1].name)
-        #    MatchingGame.selected.append(MatchingGame.grid[MatchingGame.first-1].kind)
-        #    print MatchingGame.selected
-        # else:
-        #     if arg is MatchingGame.first: 
-        #     MatchingGame.first == None
-        #     # Then if kind is in selected twice, print, it's a match!
-        #     elif 
-        #     print MatchingGame.first
-
-
-        # Now, add the two matched tiles to the "self.matched" list, and make them untoggalable. 
-            # print MatchingGame.matched
+            print "Selected:"
+            print MatchingGame.selected[0].kind
 
 class MatchingApp(App):
     def build(self):

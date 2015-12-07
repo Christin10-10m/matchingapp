@@ -75,10 +75,11 @@ class MatchingGame(Widget):
             print "clicked on = %s" % clickedOn.name
         if MatchingGame.selected and MatchingGame.selected[0].kind == clickedOn.kind:   
             print "MATCH!"
-            MatchingGame.matched.append(MatchingGame.selected) # how do you add both? 
+            MatchingGame.selected.append(clickedOn)
+            MatchingGame.matched.append(MatchingGame.selected)
             MatchingGame.selected = []
             print "Matched:" 
-            print MatchingGame.matched # how to get it to print list attributes? 
+            print [(fst.name, snd.name) for (fst, snd) in MatchingGame.matched]
         elif MatchingGame.selected and MatchingGame.selected[0].kind != clickedOn.kind:
             print "NO MATCH!"
             MatchingGame.selected = []

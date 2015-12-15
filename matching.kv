@@ -36,98 +36,132 @@
 
 
             ToggleButton:
+                id: tile0 
+                text: "1"
+                background_down: str(root.grid[0].imageurl)
+                on_press: root.passed_back(0, self)
+                color: root.text_color
+                                
+            ToggleButton:
                 id: tile1
-                text: str(root.characters[0])
-                background_down: str(root.grid[root.characters[0]-1].imageurl)
-                on_press: root.passed_back(root.characters[0])                
+                text: "2"
+                background_down: str(root.grid[1].imageurl)
+                on_press: root.passed_back(1, self)
+                color: root.text_color
+                
+
             ToggleButton:
                 id: tile2
-                text: str(root.characters[1])
-                background_down: str(root.grid[root.characters[1]-1].imageurl)
-                on_press: root.passed_back(root.characters[1])
+                text: "3"
+                background_down: str(root.grid[2].imageurl) 
+                on_press: root.passed_back(2, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile3
-                text: str(root.characters[2])
-                background_down: str(root.grid[root.characters[2]-1].imageurl) 
-                on_press: root.passed_back(root.characters[2])
+                text: "4"
+                background_down: str(root.grid[3].imageurl)
+                on_press: root.passed_back(3, self)
+                color: root.text_color
+                
 
             ToggleButton:
                 id: tile4
-                text: str(root.characters[3])
-                background_down: str(root.grid[root.characters[3]-1].imageurl)
-                on_press: root.passed_back(root.characters[3])
+                text: "5"
+                background_down: str(root.grid[4].imageurl)
+                on_press: root.passed_back(4, self) 
+                color: root.text_color
+                
 
             ToggleButton:
                 id: tile5
-                text: str(root.characters[4])
-                background_down: str(root.grid[root.characters[4]-1].imageurl)
-                on_press: root.passed_back(root.characters[4]) 
+                text: "6"
+                background_down: str(root.grid[5].imageurl)
+                on_press: root.passed_back(5, self)
+                color: root.text_color
+                
 
             ToggleButton:
                 id: tile6
-                text: str(root.characters[5])
-                background_down: str(root.grid[root.characters[5]-1].imageurl)
-                on_press: root.passed_back(root.characters[5])
+                text: "7"
+                background_down: str(root.grid[6].imageurl)
+                on_press: root.passed_back(6, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile7
-                text: str(root.characters[6])
-                background_down: str(root.grid[root.characters[6]-1].imageurl)
-                on_press: root.passed_back(root.characters[6])
+                text: "8"
+                background_down: str(root.grid[7].imageurl) 
+                on_press: root.passed_back(7, self)
+                color: root.text_color
+                
 
             ToggleButton:
                 id: tile8
-                text: str(root.characters[7])
-                background_down: str(root.grid[root.characters[7]-1].imageurl) 
-                on_press: root.passed_back(root.characters[7])
+                text: "9"
+                background_down: str(root.grid[8].imageurl)
+                on_press: root.passed_back(8, self) 
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile9
-                text: str(root.characters[8])
-                background_down: str(root.grid[root.characters[8]-1].imageurl)
-                on_press: root.passed_back(root.characters[8]) 
+                text: "10"
+                background_down: str(root.grid[9].imageurl)
+                on_press: root.passed_back(9, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile10
-                text: str(root.characters[9])
-                background_down: str(root.grid[root.characters[9]-1].imageurl)
-                on_press: root.passed_back(root.characters[9])
+                text: "11"
+                background_down: str(root.grid[10].imageurl) 
+                on_press: root.passed_back(10, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile11
-                text: str(root.characters[10])
-                background_down: str(root.grid[root.characters[10]-1].imageurl) 
-                on_press: root.passed_back(root.characters[10])
+                text: "12"
+                background_down: str(root.grid[11].imageurl) 
+                on_press: root.passed_back(11, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile12
-                text: str(root.characters[11])
-                background_down: str(root.grid[root.characters[11]-1].imageurl) 
-                on_press: root.passed_back(root.characters[11])
+                text: "13"
+                background_down: str(root.grid[12].imageurl) 
+                on_press: root.passed_back(12, self) 
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile13
-                text: str(root.characters[12])
-                background_down: str(root.grid[root.characters[12]-1].imageurl) 
-                on_press: root.passed_back(root.characters[12]) 
+                text: "14"
+                background_down: str(root.grid[13].imageurl) 
+                on_press: root.passed_back(13, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile14
-                text: str(root.characters[13])
-                background_down: str(root.grid[root.characters[13]-1].imageurl) 
-                on_press: root.passed_back(root.characters[13])
+                text: "15"
+                background_down: str(root.grid[14].imageurl) 
+                on_press: root.passed_back(14, self)
+                color: root.text_color
+                 
 
             ToggleButton:
                 id: tile15
-                text: str(root.characters[14])
-                background_down: str(root.grid[root.characters[14]-1].imageurl) 
-                on_press: root.passed_back(root.characters[14])
+                text: "16"
+                background_down: str(root.grid[15].imageurl)
+                on_press: root.passed_back(15, self) 
+                color: root.text_color
 
-            ToggleButton:
-                id: tile16
-                text: str(root.characters[15])
-                background_down: str(root.grid[root.characters[15]-1].imageurl)
-                on_press: root.passed_back(root.characters[15]) 
+
+                 
 
     
